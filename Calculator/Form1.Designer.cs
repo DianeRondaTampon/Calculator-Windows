@@ -45,6 +45,7 @@
             this.btnAddition = new System.Windows.Forms.Button();
             this.btnMultiplication = new System.Windows.Forms.Button();
             this.btnDivision = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnNumber1
@@ -231,11 +232,23 @@
             this.btnDivision.UseVisualStyleBackColor = true;
             this.btnDivision.Click += new System.EventHandler(this.btnDivision_Click);
             // 
+            // btnClear
+            // 
+            this.btnClear.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnClear.Location = new System.Drawing.Point(494, 101);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(100, 100);
+            this.btnClear.TabIndex = 17;
+            this.btnClear.Text = "C";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 567);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnSubtraction);
             this.Controls.Add(this.btnAddition);
             this.Controls.Add(this.btnMultiplication);
@@ -280,5 +293,6 @@
         private Button btnAddition;
         private Button btnMultiplication;
         private Button btnDivision;
+        private Button btnClear;
     }
 }
