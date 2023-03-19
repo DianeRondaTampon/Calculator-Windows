@@ -2,8 +2,8 @@ namespace WinFormsApp2
 {
     public partial class Form1 : Form
     {
-        double number1; // is the first operator of calculator
-        bool division = false;  // will be true if the opeartion is ongoing if not will be false
+        double operator1; // is the first operator of calculator
+        bool division = false;  // will be true if the operation is ongoing if not will be false
 
         public Form1()
         {
@@ -65,9 +65,23 @@ namespace WinFormsApp2
             txtCalculator.Text = txtCalculator.Text + "0";
         }
 
-        private void btnEqual_Click(object sender, EventArgs e)
+        private void btnEqual_Click(object sender, EventArgs e)  
         {
-
+            if (division == true)
+            {
+                double number;
+                bool isNumeric = double.TryParse(txtCalculator.Text, out number);
+                if (isNumeric)
+                {
+                    double result = operator1 / number;
+                    txtCalculator.Text = result.ToString();
+                    division = false;
+                }
+                else 
+                { 
+                    MessageBox.Show("Error, not numeric"); 
+                }
+            }
         }
 
         private void btnAddition_Click(object sender, EventArgs e)
@@ -92,24 +106,24 @@ namespace WinFormsApp2
             bool isNumeric = double.TryParse(txtCalculator.Text, out number);
             if (isNumeric)
             {
-                
                 // when the user starts a division, if the first operator is a valid number:
-                // we will save the first operator
-                // we will empty the calculator input
+
                 // we will mark the division as ongoing
                 division = true;
-                number1 = number;
+                // we will save the first operator
+                operator1 = number;
+                // we will empty the calculator input
                 txtCalculator.Text = "";
             }
             else
             {
-                MessageBox.Show("Error");
+                MessageBox.Show("Error, not numeric");
             }
         }
 
         private void btnPoint_Click(object sender, EventArgs e)
         {
-            if (txtCalculator.Text.IndexOf(".") == -1)  //NOT FOUND . IN CALCULATOR
+            if (txtCalculator.Text.IndexOf(".") == -1)  //Not found "." in calculator's input
             {
                 txtCalculator.Text = txtCalculator.Text + ".";
             }
