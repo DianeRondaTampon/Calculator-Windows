@@ -21,60 +21,106 @@ namespace WinFormsApp2
 
         private void btnNumber1_Click(object sender, EventArgs e)
         {
+            if (txtCalculator.Text == "0")
+            {
+                txtCalculator.Text = "";
+            }
             txtCalculator.Text = txtCalculator.Text + "1";
         }
 
         private void btnNumber2_Click(object sender, EventArgs e)
         {
+            if (txtCalculator.Text == "0")
+            {
+                txtCalculator.Text = "";
+            }
             txtCalculator.Text = txtCalculator.Text + "2";
         }
 
         private void btnNumber3_Click(object sender, EventArgs e)
         {
+             if (txtCalculator.Text == "0")
+            {
+                txtCalculator.Text = "";
+            }
             txtCalculator.Text = txtCalculator.Text + "3";
         }
 
         private void btnNumber4_Click(object sender, EventArgs e)
         {
+            if (txtCalculator.Text == "0")
+            {
+                txtCalculator.Text = "";
+            }
             txtCalculator.Text = txtCalculator.Text + "4";
         }
 
         private void btnNumber5_Click(object sender, EventArgs e)
         {
+            if (txtCalculator.Text == "0")
+            {
+                txtCalculator.Text = "";
+            }
             txtCalculator.Text = txtCalculator.Text + "5";
         }
 
         private void btnNumber6_Click(object sender, EventArgs e)
         {
+            if (txtCalculator.Text == "0")
+            {
+                txtCalculator.Text = "";
+            }
             txtCalculator.Text = txtCalculator.Text + "6";
         }
 
         private void btnNumber7_Click(object sender, EventArgs e)
         {
+            if (txtCalculator.Text == "0")
+            {
+                txtCalculator.Text = "";
+            }
             txtCalculator.Text = txtCalculator.Text + "7";
         }
 
         private void btnNumber8_Click(object sender, EventArgs e)
         {
+            if (txtCalculator.Text == "0")
+            {
+                txtCalculator.Text = "";
+            }
             txtCalculator.Text = txtCalculator.Text + "8";
         }
 
         private void btnNumber9_Click(object sender, EventArgs e)
         {
+            if (txtCalculator.Text == "0")
+            {
+                txtCalculator.Text = "";
+            }
             txtCalculator.Text = txtCalculator.Text + "9";
         }
 
         private void btnNumber0_Click(object sender, EventArgs e)
         {
+            if (txtCalculator.Text == "0")
+            {
+                txtCalculator.Text = "";
+            }
             txtCalculator.Text = txtCalculator.Text + "0";
         }
 
         private void btnEqual_Click(object sender, EventArgs e)  
         {
+            
             double number;
+            if (txtCalculator.Text == "")
+            {
+                txtCalculator.Text = "0";
+            }
             bool isNumeric = double.TryParse(txtCalculator.Text, out number);
             if (isNumeric)
             {
+                
                 if (division)
                 {
                     double result = operator1 / number;
@@ -109,6 +155,10 @@ namespace WinFormsApp2
         private void btnAddition_Click(object sender, EventArgs e)
         {
             double number;
+            if (txtCalculator.Text == "") 
+            {
+                txtCalculator.Text = "0";
+            }
             bool isNumeric = double.TryParse(txtCalculator.Text, out number);
             if (isNumeric)
             {
@@ -122,7 +172,7 @@ namespace WinFormsApp2
                 // we will save the first operator
                 operator1 = number;
                 // we will empty the calculator input
-                txtCalculator.Text = "";
+                txtCalculator.Text = "0";
             }
             else
             {
@@ -133,6 +183,10 @@ namespace WinFormsApp2
         private void btnSubtraction_Click(object sender, EventArgs e)
         {
             double number;
+            if (txtCalculator.Text == "")
+            {
+                txtCalculator.Text = "0";
+            }
             bool isNumeric = double.TryParse(txtCalculator.Text, out number);
             if (isNumeric)
             {
@@ -146,7 +200,7 @@ namespace WinFormsApp2
                 // we will save the first operator
                 operator1 = number;
                 // we will empty the calculator input
-                txtCalculator.Text = "";
+                txtCalculator.Text = "0";
             }
             else
             {
@@ -157,6 +211,10 @@ namespace WinFormsApp2
         private void btnMultiplication_Click(object sender, EventArgs e)
         {
             double number;
+            if (txtCalculator.Text == "")
+            {
+                txtCalculator.Text = "0";
+            }
             bool isNumeric = double.TryParse(txtCalculator.Text, out number);
             if (isNumeric)
             {
@@ -170,7 +228,7 @@ namespace WinFormsApp2
                 // we will save the first operator
                 operator1 = number;
                 // we will empty the calculator input
-                txtCalculator.Text = "";
+                txtCalculator.Text = "0";
             }
             else
             {
@@ -182,6 +240,10 @@ namespace WinFormsApp2
         { 
 
             double number;
+            if (txtCalculator.Text == "")
+            {
+                txtCalculator.Text = "0";
+            }
             bool isNumeric = double.TryParse(txtCalculator.Text, out number);
             if (isNumeric)
             {
@@ -195,7 +257,7 @@ namespace WinFormsApp2
                 // we will save the first operator
                 operator1 = number;
                 // we will empty the calculator input
-                txtCalculator.Text = "";
+                txtCalculator.Text = "0";
             }
             else
             {
@@ -215,12 +277,22 @@ namespace WinFormsApp2
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            txtCalculator.Text = "";
+            txtCalculator.Text = "0";
             operator1 = 0;
             division = false;
             multiplication = false;
             addition = false;
             subtraction = false;
+        }
+
+        private void txtCalculator_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCalculator_TextChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
