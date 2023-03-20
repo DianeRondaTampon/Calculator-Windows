@@ -151,117 +151,192 @@ namespace WinFormsApp2
                 MessageBox.Show("Error, not numeric"); 
             }
         }
-
-        private void btnAddition_Click(object sender, EventArgs e)
+        bool checkAllTheOperationsOnGoing()
         {
-            double number;
-            if (txtCalculator.Text == "") 
-            {
-                txtCalculator.Text = "0";
-            }
-            bool isNumeric = double.TryParse(txtCalculator.Text, out number);
-            if (isNumeric)
-            {
-                // when the user starts a addition, if the first operator is a valid number:
+          
+            double operator2;
+            double result;
+            bool check = (multiplication || division || addition || subtraction );
 
-                // we will mark the addition as ongoing
-                addition = true;
-                subtraction = false;
-                multiplication = false;
-                division = false;
-                // we will save the first operator
-                operator1 = number;
-                // we will empty the calculator input
-                txtCalculator.Text = "0";
-            }
-            else
+            operator2 = Convert.ToDouble(txtCalculator.Text);
+
+            if (addition)
             {
-                MessageBox.Show("Error, not numeric");
+                addition = false;
+                //this code will be executed when the multiplication id ongoing
+                result = (operator1 + operator2);
+                //txtCalculator.Text = Convert.ToString(Result);
+                txtCalculator.Text = "0";
+                operator1 = result;
+            }
+            if (subtraction)
+            {
+                subtraction = false;
+                //this code will be executed when the multiplication id ongoing
+                result = (operator1 - operator2);
+                //txtCalculator.Text = Convert.ToString(Result);
+                txtCalculator.Text = "0";
+                operator1 = result;
+            }
+            if (multiplication)
+            {
+                multiplication = false;
+                //this code will be executed when the multiplication id ongoing
+                result = (operator1 * operator2);
+                //txtCalculator.Text = Convert.ToString(Result);
+                txtCalculator.Text = "0";
+                operator1 = result;
+            }
+            if (division)
+            {
+                division = false;
+                //this code will be executed when the multiplication id ongoing
+                result = (operator1 / operator2);
+                //txtCalculator.Text = Convert.ToString(Result);
+                txtCalculator.Text = "0";
+                operator1 = result;
+            }
+            return check;
+        }
+        
+        private void btnAddition_Click(object sender, EventArgs e)        
+        {
+            // when there are many aoperations in a row
+            bool check = checkAllTheOperationsOnGoing ();
+            addition = true;
+            if (check == false)
+            {
+                // normal addicion alone
+                double number;
+                if (txtCalculator.Text == "")
+                {
+                    txtCalculator.Text = "0";
+                }
+                bool isNumeric = double.TryParse(txtCalculator.Text, out number);
+                if (isNumeric)
+                {
+                    // when the user starts a addition, if the first operator is a valid number:
+
+                    // we will mark the addition as ongoing
+                    addition = true;
+                    subtraction = false;
+                    multiplication = false;
+                    division = false;
+                    // we will save the first operator
+                    operator1 = number;
+                    // we will empty the calculator input
+                    txtCalculator.Text = "0";
+                }
+                else
+                {
+                    MessageBox.Show("Error, not numeric");
+                }
             }
         }
 
         private void btnSubtraction_Click(object sender, EventArgs e)
         {
-            double number;
-            if (txtCalculator.Text == "")
+            // when there are many aoperations in a row
+            bool check = checkAllTheOperationsOnGoing();
+            subtraction = true;
+            if (check == false)
             {
-                txtCalculator.Text = "0";
-            }
-            bool isNumeric = double.TryParse(txtCalculator.Text, out number);
-            if (isNumeric)
-            {
-                // when the user starts a subtraction, if the first operator is a valid number:
+                // normal subtration alone
+                double number;
+                if (txtCalculator.Text == "")
+                {
+                    txtCalculator.Text = "0";
+                }
+                bool isNumeric = double.TryParse(txtCalculator.Text, out number);
+                if (isNumeric)
+                {
+                    // when the user starts a subtraction, if the first operator is a valid number:
 
-                // we will mark the subtraction as ongoing
-                subtraction = true;
-                addition = false;
-                multiplication = false;
-                division = false;
-                // we will save the first operator
-                operator1 = number;
-                // we will empty the calculator input
-                txtCalculator.Text = "0";
-            }
-            else
-            {
-                MessageBox.Show("Error, not numeric");
+                    // we will mark the subtraction as ongoing
+                    subtraction = true;
+                    addition = false;
+                    multiplication = false;
+                    division = false;
+                    // we will save the first operator
+                    operator1 = number;
+                    // we will empty the calculator input
+                    txtCalculator.Text = "0";
+                }
+                else
+                {
+                    MessageBox.Show("Error, not numeric");
+                }
             }
         }
 
         private void btnMultiplication_Click(object sender, EventArgs e)
         {
-            double number;
-            if (txtCalculator.Text == "")
+            // when there are many aoperations in a row
+            bool check = checkAllTheOperationsOnGoing();
+            multiplication = true;
+            if (check == false)
             {
-                txtCalculator.Text = "0";
-            }
-            bool isNumeric = double.TryParse(txtCalculator.Text, out number);
-            if (isNumeric)
-            {
-                // when the user starts a multiplication, if the first operator is a valid number:
+                // normal multipication alone
+                double number;
+                if (txtCalculator.Text == "")
+                {
+                    txtCalculator.Text = "0";
+                }
+                bool isNumeric = double.TryParse(txtCalculator.Text, out number);
+                if (isNumeric)
+                {
+                    // when the user starts a multiplication, if the first operator is a valid number:
 
-                // we will mark the multiplication as ongoing
-                multiplication = true;
-                addition = false;
-                subtraction = false;
-                division = false;
-                // we will save the first operator
-                operator1 = number;
-                // we will empty the calculator input
-                txtCalculator.Text = "0";
-            }
-            else
-            {
-                MessageBox.Show("Error, not numeric");
+                    // we will mark the multiplication as ongoing
+                    multiplication = true;
+                    addition = false;
+                    subtraction = false;
+                    division = false;
+                    // we will save the first operator
+                    operator1 = number;
+                    // we will empty the calculator input
+                    txtCalculator.Text = "0";
+                }
+                else
+                {
+                    MessageBox.Show("Error, not numeric");
+                }
             }
         }
 
         private void btnDivision_Click(object sender, EventArgs e)
-        { 
+        {
+            // when there are many aoperations in a row
+            bool check = checkAllTheOperationsOnGoing();
+            division = true;
+            if (check == false)
+            {
+                // normal division alone
 
-            double number;
-            if (txtCalculator.Text == "")
-            {
-                txtCalculator.Text = "0";
-            }
-            bool isNumeric = double.TryParse(txtCalculator.Text, out number);
-            if (isNumeric)
-            {
-                // when the user starts a division, if the first operator is a valid number:
+                double number;
+                if (txtCalculator.Text == "")
+                {
+                    txtCalculator.Text = "0";
+                }
+                bool isNumeric = double.TryParse(txtCalculator.Text, out number);
+                if (isNumeric)
+                {
+                    // when the user starts a division, if the first operator is a valid number:
 
-                // we will mark the division as ongoing
-                division = true;
-                addition = false;
-                multiplication = false;
-                subtraction = false;
-                // we will save the first operator
-                operator1 = number;
-                // we will empty the calculator input
-                txtCalculator.Text = "0";
-            }
-            else
-            {
-                MessageBox.Show("Error, not numeric");
+                    // we will mark the division as ongoing
+                    division = true;
+                    addition = false;
+                    multiplication = false;
+                    subtraction = false;
+                    // we will save the first operator
+                    operator1 = number;
+                    // we will empty the calculator input
+                    txtCalculator.Text = "0";
+                }
+                else
+                {
+                    MessageBox.Show("Error, not numeric");
+                }
             }
         }
 
