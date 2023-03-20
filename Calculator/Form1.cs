@@ -7,8 +7,8 @@ namespace WinFormsApp2
         bool multiplication = false;  // will be true if the operation is ongoing if not will be false
         bool addition = false;  // will be true if the operation is ongoing if not will be false
         bool subtraction = false;  // will be true if the operation is ongoing if not will be false
-
-
+        bool inputNewNumber = true; // will be true when the user has to input a new number
+       
         public Form1()
         {
             InitializeComponent();
@@ -19,95 +19,154 @@ namespace WinFormsApp2
 
         }
 
+        
         private void btnNumber1_Click(object sender, EventArgs e)
         {
-            if (txtCalculator.Text == "0")
+            if (inputNewNumber)
             {
-                txtCalculator.Text = "";
+                txtCalculator.Text = "1";
+                inputNewNumber = false;
             }
-            txtCalculator.Text = txtCalculator.Text + "1";
+            else
+            {
+                txtCalculator.Text = txtCalculator.Text + "1";
+            }
+            
         }
 
         private void btnNumber2_Click(object sender, EventArgs e)
         {
-            if (txtCalculator.Text == "0")
+            if (inputNewNumber)
             {
-                txtCalculator.Text = "";
+                txtCalculator.Text = "2";
+                inputNewNumber = false;
             }
-            txtCalculator.Text = txtCalculator.Text + "2";
+            else
+            {
+                txtCalculator.Text = txtCalculator.Text + "2";
+            }          
         }
 
         private void btnNumber3_Click(object sender, EventArgs e)
         {
-             if (txtCalculator.Text == "0")
+            if (inputNewNumber)
             {
-                txtCalculator.Text = "";
+                txtCalculator.Text = "3";
+                inputNewNumber = false;
             }
-            txtCalculator.Text = txtCalculator.Text + "3";
+            else
+            {
+                txtCalculator.Text = txtCalculator.Text + "3";
+            }
+
         }
+
 
         private void btnNumber4_Click(object sender, EventArgs e)
         {
-            if (txtCalculator.Text == "0")
+            if (inputNewNumber)
             {
-                txtCalculator.Text = "";
+                txtCalculator.Text = "4";
+                inputNewNumber = false;
             }
-            txtCalculator.Text = txtCalculator.Text + "4";
+            else
+            {
+                txtCalculator.Text = txtCalculator.Text + "4";
+            }
+            
         }
+
 
         private void btnNumber5_Click(object sender, EventArgs e)
         {
-            if (txtCalculator.Text == "0")
+            if (inputNewNumber)
             {
-                txtCalculator.Text = "";
+                txtCalculator.Text = "5";
+                inputNewNumber = false;
             }
-            txtCalculator.Text = txtCalculator.Text + "5";
+            else
+            {
+                txtCalculator.Text = txtCalculator.Text + "5";
+            }
+            
         }
+
 
         private void btnNumber6_Click(object sender, EventArgs e)
         {
-            if (txtCalculator.Text == "0")
+            if (inputNewNumber)
             {
-                txtCalculator.Text = "";
+                txtCalculator.Text = "6";
+                inputNewNumber = false;
             }
-            txtCalculator.Text = txtCalculator.Text + "6";
+            else
+            {
+                
+                txtCalculator.Text = txtCalculator.Text + "6";
+            }
+            
         }
+
 
         private void btnNumber7_Click(object sender, EventArgs e)
         {
-            if (txtCalculator.Text == "0")
+            if (inputNewNumber)
             {
-                txtCalculator.Text = "";
+                txtCalculator.Text = "7";
+                inputNewNumber = false;
             }
-            txtCalculator.Text = txtCalculator.Text + "7";
+            else
+            {
+                txtCalculator.Text = txtCalculator.Text + "7";
+            }
+            
         }
+
 
         private void btnNumber8_Click(object sender, EventArgs e)
         {
-            if (txtCalculator.Text == "0")
+            if (inputNewNumber)
             {
-                txtCalculator.Text = "";
+                txtCalculator.Text = "8";
+                inputNewNumber = false;
             }
-            txtCalculator.Text = txtCalculator.Text + "8";
+            else
+            {
+                txtCalculator.Text = txtCalculator.Text + "8";
+            }
+            
         }
+
 
         private void btnNumber9_Click(object sender, EventArgs e)
         {
-            if (txtCalculator.Text == "0")
+            if (inputNewNumber)
             {
-                txtCalculator.Text = "";
+                txtCalculator.Text = "9";
+                inputNewNumber = false;
             }
-            txtCalculator.Text = txtCalculator.Text + "9";
+            else
+            {
+                txtCalculator.Text = txtCalculator.Text + "9";
+            }
+            
         }
+
 
         private void btnNumber0_Click(object sender, EventArgs e)
         {
-            if (txtCalculator.Text == "0")
+            if (inputNewNumber)
             {
-                txtCalculator.Text = "";
+                txtCalculator.Text = "0";
+                inputNewNumber = false;
             }
-            txtCalculator.Text = txtCalculator.Text + "0";
+            else
+            {
+                txtCalculator.Text = txtCalculator.Text + "0";
+            }
+            
         }
+
 
         private void btnEqual_Click(object sender, EventArgs e)  
         {
@@ -150,6 +209,7 @@ namespace WinFormsApp2
             { 
                 MessageBox.Show("Error, not numeric"); 
             }
+            inputNewNumber = true;
         }
         bool checkAllTheOperationsOnGoing()
         {
@@ -165,8 +225,9 @@ namespace WinFormsApp2
                 addition = false;
                 //this code will be executed when the multiplication id ongoing
                 result = (operator1 + operator2);
-                //txtCalculator.Text = Convert.ToString(Result);
-                txtCalculator.Text = "0";
+                txtCalculator.Text = Convert.ToString(result);
+                inputNewNumber = true;
+                //txtCalculator.Text = "0";
                 operator1 = result;
             }
             if (subtraction)
@@ -174,8 +235,9 @@ namespace WinFormsApp2
                 subtraction = false;
                 //this code will be executed when the multiplication id ongoing
                 result = (operator1 - operator2);
-                //txtCalculator.Text = Convert.ToString(Result);
-                txtCalculator.Text = "0";
+                txtCalculator.Text = Convert.ToString(result);
+                inputNewNumber = true;
+                //txtCalculator.Text = "0";
                 operator1 = result;
             }
             if (multiplication)
@@ -183,8 +245,9 @@ namespace WinFormsApp2
                 multiplication = false;
                 //this code will be executed when the multiplication id ongoing
                 result = (operator1 * operator2);
-                //txtCalculator.Text = Convert.ToString(Result);
-                txtCalculator.Text = "0";
+                txtCalculator.Text = Convert.ToString(result);
+                inputNewNumber = true;
+                //txtCalculator.Text = "0";
                 operator1 = result;
             }
             if (division)
@@ -192,8 +255,9 @@ namespace WinFormsApp2
                 division = false;
                 //this code will be executed when the multiplication id ongoing
                 result = (operator1 / operator2);
-                //txtCalculator.Text = Convert.ToString(Result);
-                txtCalculator.Text = "0";
+                txtCalculator.Text = Convert.ToString(result);
+                inputNewNumber= true;
+                //txtCalculator.Text = "0";
                 operator1 = result;
             }
             return check;
@@ -226,6 +290,7 @@ namespace WinFormsApp2
                     operator1 = number;
                     // we will empty the calculator input
                     txtCalculator.Text = "0";
+                    inputNewNumber = true;
                 }
                 else
                 {
@@ -261,6 +326,7 @@ namespace WinFormsApp2
                     operator1 = number;
                     // we will empty the calculator input
                     txtCalculator.Text = "0";
+                    inputNewNumber = true;
                 }
                 else
                 {
@@ -296,6 +362,7 @@ namespace WinFormsApp2
                     operator1 = number;
                     // we will empty the calculator input
                     txtCalculator.Text = "0";
+                    inputNewNumber = true;
                 }
                 else
                 {
@@ -332,6 +399,7 @@ namespace WinFormsApp2
                     operator1 = number;
                     // we will empty the calculator input
                     txtCalculator.Text = "0";
+                    inputNewNumber = true;
                 }
                 else
                 {
@@ -353,6 +421,7 @@ namespace WinFormsApp2
         private void btnClear_Click(object sender, EventArgs e)
         {
             txtCalculator.Text = "0";
+            inputNewNumber = true;
             operator1 = 0;
             division = false;
             multiplication = false;
