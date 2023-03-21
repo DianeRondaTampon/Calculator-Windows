@@ -24,149 +24,101 @@ namespace WinFormsApp2
         {
             if (inputNewNumber)
             {
-                txtCalculator.Text = "1";
+                txtCalculator.Text = "";
                 inputNewNumber = false;
             }
-            else
-            {
-                txtCalculator.Text = txtCalculator.Text + "1";
-            }
-            
+            txtCalculator.Text = txtCalculator.Text + "1";
         }
 
         private void btnNumber2_Click(object sender, EventArgs e)
         {
             if (inputNewNumber)
             {
-                txtCalculator.Text = "2";
+                txtCalculator.Text = "";
                 inputNewNumber = false;
             }
-            else
-            {
-                txtCalculator.Text = txtCalculator.Text + "2";
-            }          
+            txtCalculator.Text = txtCalculator.Text + "2";
         }
 
         private void btnNumber3_Click(object sender, EventArgs e)
         {
             if (inputNewNumber)
             {
-                txtCalculator.Text = "3";
+                txtCalculator.Text = "";
                 inputNewNumber = false;
             }
-            else
-            {
-                txtCalculator.Text = txtCalculator.Text + "3";
-            }
-
+            txtCalculator.Text = txtCalculator.Text + "3";
         }
-
 
         private void btnNumber4_Click(object sender, EventArgs e)
         {
             if (inputNewNumber)
             {
-                txtCalculator.Text = "4";
+                txtCalculator.Text = "";
                 inputNewNumber = false;
             }
-            else
-            {
-                txtCalculator.Text = txtCalculator.Text + "4";
-            }
-            
+            txtCalculator.Text = txtCalculator.Text + "4";
         }
-
 
         private void btnNumber5_Click(object sender, EventArgs e)
         {
             if (inputNewNumber)
             {
-                txtCalculator.Text = "5";
+                txtCalculator.Text = "";
                 inputNewNumber = false;
             }
-            else
-            {
-                txtCalculator.Text = txtCalculator.Text + "5";
-            }
-            
+            txtCalculator.Text = txtCalculator.Text + "5";
         }
-
 
         private void btnNumber6_Click(object sender, EventArgs e)
         {
             if (inputNewNumber)
             {
-                txtCalculator.Text = "6";
+                txtCalculator.Text = "";
                 inputNewNumber = false;
             }
-            else
-            {
-                
-                txtCalculator.Text = txtCalculator.Text + "6";
-            }
-            
+            txtCalculator.Text = txtCalculator.Text + "6";
         }
-
 
         private void btnNumber7_Click(object sender, EventArgs e)
         {
             if (inputNewNumber)
             {
-                txtCalculator.Text = "7";
+                txtCalculator.Text = "";
                 inputNewNumber = false;
             }
-            else
-            {
-                txtCalculator.Text = txtCalculator.Text + "7";
-            }
-            
+            txtCalculator.Text = txtCalculator.Text + "7";
         }
-
 
         private void btnNumber8_Click(object sender, EventArgs e)
         {
             if (inputNewNumber)
             {
-                txtCalculator.Text = "8";
+                txtCalculator.Text = "";
                 inputNewNumber = false;
             }
-            else
-            {
-                txtCalculator.Text = txtCalculator.Text + "8";
-            }
-            
+            txtCalculator.Text = txtCalculator.Text + "8";
         }
-
 
         private void btnNumber9_Click(object sender, EventArgs e)
         {
             if (inputNewNumber)
             {
-                txtCalculator.Text = "9";
+                txtCalculator.Text = "";
                 inputNewNumber = false;
             }
-            else
-            {
-                txtCalculator.Text = txtCalculator.Text + "9";
-            }
-            
+            txtCalculator.Text = txtCalculator.Text + "9";
         }
-
 
         private void btnNumber0_Click(object sender, EventArgs e)
         {
             if (inputNewNumber)
             {
-                txtCalculator.Text = "0";
+                txtCalculator.Text = "";
                 inputNewNumber = false;
             }
-            else
-            {
-                txtCalculator.Text = txtCalculator.Text + "0";
-            }
-            
+            txtCalculator.Text = txtCalculator.Text + "0";
         }
-
 
         private void btnEqual_Click(object sender, EventArgs e)  
         {
